@@ -1,0 +1,126 @@
+1. Planificación y Diseño Inicial
+Objetivo: Identificar requerimientos detallados, diseñar la arquitectura general y decidir las tecnologías clave.
+Acciones:
+Definir los servicios específicos de la tienda (p. ej., usuario, carrito, productos, autenticación).
+Esquematizar la arquitectura de microservicios.
+Seleccionar tecnologías principales:
+Backend: Java y Spring Boot, además de Python para procesamiento específico.
+Bases de Datos: MySQL y Firebase.
+Autenticación y Almacenamiento de Datos en la Nube: Firebase.
+Crear un diagrama UML para representar la relación entre microservicios y bases de datos.
+
+2. Configuración del Entorno
+Objetivo: Preparar el entorno de desarrollo y los repositorios de código.
+Acciones:
+Configurar entornos de desarrollo con Java y Spring Boot.
+Configurar bases de datos MySQL y Firebase.
+Integrar Python en el proyecto para posibles tareas como el procesamiento de datos o recomendaciones.
+Crear repositorios en Git para cada microservicio.
+
+3. Desarrollo de Microservicios Core
+Objetivo: Construir microservicios principales y estructurarlos en capas.
+Microservicios Principales:
+Servicio de Autenticación de Usuarios
+Configurar autenticación con Firebase Authentication.
+Crear APIs de registro, inicio de sesión y recuperación de contraseña.
+Implementar reglas de acceso y roles (usuario y administrador).
+Servicio de Gestión de Usuarios
+Crear endpoints para manejar la creación, edición y consulta de usuarios.
+Integrar Firebase Firestore o Realtime Database para guardar la información general de los usuarios.
+Servicio de Productos
+Endpoint para obtener, crear, actualizar y eliminar productos.
+Usar MySQL como base de datos de productos y Firebase para datos en tiempo real.
+Servicio de Carrito de Compras
+APIs para agregar y eliminar productos del carrito, así como para realizar el checkout.
+Integrar con la base de datos de MySQL para registrar la información del carrito y Firebase para sincronización
+ en tiempo real.
+
+4. Configuración de Bases de Datos
+Objetivo: Crear y enlazar bases de datos SQL y Firebase.
+Acciones:
+Configurar MySQL para datos estructurados y permanentes (productos, carrito, órdenes).
+Configurar Firebase como base de datos de sincronización para datos de usuarios y autenticación.
+Implementar conexiones y repositorios en cada microservicio para interactuar con las bases de datos.
+
+5. Integración de Servicios Externos y Redes Sociales
+Objetivo: Incluir la funcionalidad de redes sociales y otros servicios.
+Acciones:
+Desarrollar una sección en el frontend para mostrar redes sociales.
+Crear un microservicio para manejar la integración de redes sociales, utilizando Firebase para la autenticación
+de usuarios.
+Conectar con APIs de redes sociales (Facebook, Instagram, etc.) para publicar automáticamente o manejar login.
+
+6. Implementación de Seguridad
+Objetivo: Asegurar la tienda virtual en cada uno de sus aspectos.
+Acciones:
+Configurar autenticación y autorización con Spring Security y Firebase.
+Implementar OAuth para inicios de sesión con redes sociales.
+Usar JWT (JSON Web Tokens) para gestionar la sesión del usuario y validar permisos.
+Definir políticas de acceso para cada endpoint.
+
+7. Implementación de Reglas de Negocio y Excepciones
+Objetivo: Definir y aplicar reglas de negocio y manejo de errores.
+Acciones:
+Crear reglas de negocio en los microservicios (p. ej., límites en cantidad de compras, límites en descuentos).
+Implementar manejo de excepciones en cada servicio, usando controladores de excepciones globales con Spring.
+Loggear excepciones y eventos críticos usando herramientas como Logback o ELK Stack.
+8. Desarrollo de Frontend y API Gateway
+Objetivo: Crear un frontend funcional y configurar un API Gateway.
+Acciones:
+Desarrollar un frontend en Angular, React o Vue para el manejo de interfaces de usuario.
+Crear secciones para productos, carrito, redes sociales y gestión de usuario.
+Implementar un API Gateway con Spring Cloud Gateway para orquestar los microservicios y simplificar el acceso 
+al frontend.
+Configurar CORS y manejar políticas de seguridad en el API Gateway.
+9. Pruebas y Aseguramiento de Calidad
+Objetivo: Garantizar que cada parte de la tienda funcione correctamente.
+Acciones:
+Implementar JUnit para pruebas unitarias en microservicios y Mockito para pruebas de integración.
+Realizar pruebas de rendimiento con Gatling o JMeter.
+Configurar pruebas de seguridad para evaluar la resistencia de la aplicación.
+10. Implementación en Producción y Monitoreo
+Objetivo: Desplegar la aplicación en la nube y monitorear su funcionamiento.
+Acciones:
+Desplegar microservicios en Google Cloud para optimizar la integración con Firebase.
+Implementar un sistema de monitoreo y logs con herramientas como Prometheus y Grafana para cada microservicio.
+Configurar Alertas para asegurar que la aplicación responde rápidamente a problemas de rendimiento o seguridad.
+Este roadmap te guiará desde la planificación hasta el despliegue en producción, asegurando que tu tienda virtual 
+sea escalable, segura y fácil de mantener.
+
+
+
+
+
+Para elegir una licencia en GitHub, considera cómo quieres que otros usen y modifiquen tu proyecto.Resumen de las licencias más populares que podrían ajustarse a tu proyecto de tienda virtual:
+
+MIT License
+
+Características: Permite que otros usen, copien, modifiquen y distribuyan tu código, incluso para uso comercial, siempre que se mantenga la atribución del autor original.
+Ventaja: Es una de las licencias más permisivas y ampliamente utilizada, ideal si buscas que otros puedan 
+usar tu proyecto sin muchas restricciones.
+Limitaciones: No ofrece garantía ni responsabilidad, lo cual se aclara en la licencia.
+Apache License 2.0
+
+Características: Similar a la MIT, pero agrega una cláusula explícita de concesión de patente, lo cual protege 
+a los usuarios en caso de problemas legales sobre la propiedad intelectual.
+Ventaja: Es útil para proyectos que podrían incluir patentes, lo que podría ser relevante si planeas escalar
+ la tienda virtual en el futuro.
+Limitaciones: Requiere atribución, pero permite sublicenciar y distribuir modificaciones bajo los mismos
+ términos.
+GNU General Public License (GPL v3)
+
+Características: Permite el uso y distribución, pero requiere que cualquier trabajo derivado también se distribuya con la misma licencia (copyleft), obligando a quienes reutilicen tu código a compartir sus modificaciones.
+Ventaja: Útil si quieres que cualquier mejora o modificación de tu proyecto se comparta bajo la misma licencia, manteniendo el proyecto libre y abierto.
+Limitaciones: Su naturaleza copyleft no permite su uso en proyectos que buscan mantener sus derivados cerrados.
+Mozilla Public License 2.0 (MPL 2.0)
+
+Características: Permite el uso y modificación, pero exige que cualquier archivo modificado se publique bajo la
+ misma licencia, mientras que otros archivos del proyecto pueden mantenerse privados.
+Ventaja: Es un término medio entre el copyleft fuerte (GPL) y las licencias permisivas (MIT o Apache), permitiendo
+ compartir modificaciones solo en los archivos cambiados.
+Limitaciones: Se requiere que los cambios en el código original se compartan bajo la MPL, pero otros archivos
+ pueden permanecer sin compartir.
+Para un proyecto de tienda virtual en arquitectura de microservicios y con bases de datos, la MIT License o 
+Apache 2.0 suelen ser buenas opciones por su flexibilidad y permisividad, especialmente si deseas que otros 
+puedan reutilizar el código fácilmente. Sin embargo, si deseas que cualquier modificación pública sea compartida
+ con la comunidad, una opción como GPL v3 o MPL 2.0 puede ser adecuada.
